@@ -9,8 +9,8 @@ import { AgentInterceptorProvider } from '@/components/AgentInterceptorProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Next.js App',
-  description: 'Built with Next.js, React, and Tailwind CSS',
+  title: 'ShipmentSync - Logistics Message Standardizer',
+  description: 'Transform raw WhatsApp shipment messages into structured logistics data',
   icons: {
     icon: '/lyzr.png',
   },

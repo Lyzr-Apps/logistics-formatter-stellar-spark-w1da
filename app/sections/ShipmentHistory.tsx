@@ -138,7 +138,7 @@ export default function ShipmentHistory({
 
   if (safeHistory.length === 0) {
     return (
-      <Card className="bg-card/75 backdrop-blur-md border border-border shadow-md border-dashed">
+      <Card className="bg-card backdrop-blur-md border border-border shadow-md border-dashed">
         <CardContent className="py-20 text-center">
           <FiClock className="w-12 h-12 mx-auto text-muted-foreground/40 mb-4" />
           <h3 className="text-lg font-semibold text-foreground/80 mb-1">No shipments parsed yet</h3>
@@ -156,7 +156,7 @@ export default function ShipmentHistory({
 
   return (
     <div className="space-y-4">
-      <Card className="bg-card/75 backdrop-blur-md border border-border shadow-md">
+      <Card className="bg-card backdrop-blur-md border border-border shadow-md">
         <CardHeader className="pb-3">
           <div className="flex items-center justify-between">
             <CardTitle className="text-lg font-semibold tracking-tight flex items-center gap-2">
@@ -177,11 +177,11 @@ export default function ShipmentHistory({
                 placeholder="Search across all fields..."
                 value={search}
                 onChange={(e) => { setSearch(e.target.value); setPage(0) }}
-                className="pl-9 bg-background/50"
+                className="pl-9 bg-background"
               />
             </div>
             <Select value={filterStatus} onValueChange={(v) => { setFilterStatus(v as FilterStatus); setPage(0) }}>
-              <SelectTrigger className="w-[160px] bg-background/50">
+              <SelectTrigger className="w-[160px] bg-background">
                 <SelectValue placeholder="Filter status" />
               </SelectTrigger>
               <SelectContent>
@@ -243,7 +243,7 @@ export default function ShipmentHistory({
                           <TableCell className="text-xs">{firstShipment?.vehicle_type ?? '-'}</TableCell>
                           <TableCell>
                             {entry.isComplete ? (
-                              <Badge variant="secondary" className="text-[10px] bg-chart-2/15 text-chart-2 border-chart-2/20">Complete</Badge>
+                              <Badge variant="secondary" className="text-[10px] bg-emerald-100 text-emerald-700 border-emerald-200">Complete</Badge>
                             ) : (
                               <Badge variant="destructive" className="text-[10px] gap-0.5">
                                 <FiAlertTriangle className="w-2.5 h-2.5" /> Gaps
@@ -267,7 +267,7 @@ export default function ShipmentHistory({
                               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                 <div>
                                   <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Original Message</h4>
-                                  <div className="bg-background/80 rounded-lg border border-border p-3 max-h-48 overflow-y-auto">
+                                  <div className="bg-background rounded-lg border border-border p-3 max-h-48 overflow-y-auto">
                                     <pre className="text-xs font-mono whitespace-pre-wrap text-foreground/80 leading-relaxed">{entry.rawMessage ?? 'N/A'}</pre>
                                   </div>
                                 </div>
@@ -277,7 +277,7 @@ export default function ShipmentHistory({
                                     {entry.shipments.map((s, si) => {
                                       const mf = Array.isArray(s?.missing_fields) ? s.missing_fields : []
                                       return (
-                                        <div key={si} className="bg-background/80 rounded-lg border border-border p-3 space-y-1.5">
+                                        <div key={si} className="bg-background rounded-lg border border-border p-3 space-y-1.5">
                                           <div className="flex items-center justify-between">
                                             <span className="font-mono text-xs font-semibold">{s?.reference_number ?? `Shipment ${si + 1}`}</span>
                                             {mf.length > 0 && (
