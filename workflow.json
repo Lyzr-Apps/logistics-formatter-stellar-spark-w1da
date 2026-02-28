@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "Raw WhatsApp Shipment Messages",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "shipment_parser_agent",
+      "type": "Agent",
+      "label": "Shipment Parser Agent",
+      "nodeCategory": "agent"
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Standardized Shipment Data",
+      "nodeCategory": "end"
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "shipment_parser_agent"
+    },
+    {
+      "source": "shipment_parser_agent",
+      "target": "output_node"
+    }
+  ]
+}

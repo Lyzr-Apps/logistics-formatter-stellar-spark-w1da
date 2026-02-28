@@ -1,0 +1,24 @@
+{
+  "agents": [
+    {
+      "agent_id": "69a25285f5bf13678ddc892a",
+      "agent_name": "Shipment Parser Agent",
+      "agent_type": "json",
+      "node_id": "shipment_parser_agent",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "top_p": 1,
+      "image_output_config": null,
+      "voice_config": null,
+      "file_output": false,
+      "has_tools": false,
+      "has_knowledge_base": false,
+      "has_managed_agents": false
+    }
+  ],
+  "workflow_file": "workflow.json",
+  "response_schemas": [
+    "response_schemas/shipment_parser_agent.json"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "agent_name": "Shipment Parser Agent",
+  "agent_id": "69a25285f5bf13678ddc892a",
+  "description": "Parses raw, unstructured WhatsApp shipment messages and extracts pickup/delivery locations, dates/times, cargo details, contact information, vehicle information, and reference numbers into a standardized logistics table format. Handles multiple messages in a single input, flags missing fields, and ensures consistent formatting.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "shipments": [
+      {
+        "reference_number": "string",
+        "pickup_location": "string",
+        "delivery_location": "string",
+        "pickup_datetime": "string",
+        "delivery_datetime": "string",
+        "cargo_description": "string",
+        "weight_dimensions": "string",
+        "vehicle_type": "string",
+        "shipper_contact": "string",
+        "receiver_contact": "string",
+        "notes": "string",
+        "missing_fields": [
+          "string"
+        ]
+      }
+    ],
+    "total_shipments_found": "number",
+    "summary": "string"
+  },
+  "example_response": {
+    "shipments": [
+      {
+        "reference_number": "sample string",
+        "pickup_location": "sample string",
+        "delivery_location": "sample string",
+        "pickup_datetime": "sample string",
+        "delivery_datetime": "sample string",
+        "cargo_description": "sample string",
+        "weight_dimensions": "sample string",
+        "vehicle_type": "sample string",
+        "shipper_contact": "sample string",
+        "receiver_contact": "sample string",
+        "notes": "sample string",
+        "missing_fields": [
+          "sample string"
+        ]
+      }
+    ],
+    "total_shipments_found": 0,
+    "summary": "sample string"
+  }
+}

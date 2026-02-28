@@ -1,0 +1,47 @@
+{
+  "agent_name": "Shipment Parser Agent",
+  "agent_id": "69a25285f5bf13678ddc892a",
+  "agent_type": "json",
+  "accessor": "result.response.result",
+  "has_module_outputs": false,
+  "response_schema": {
+    "shipments": [
+      {
+        "reference_number": "string",
+        "pickup_location": "string",
+        "delivery_location": "string",
+        "pickup_datetime": "string",
+        "delivery_datetime": "string",
+        "cargo_description": "string",
+        "weight_dimensions": "string",
+        "vehicle_type": "string",
+        "shipper_contact": "string",
+        "receiver_contact": "string",
+        "notes": "string",
+        "missing_fields": ["string"]
+      }
+    ],
+    "total_shipments_found": "number",
+    "summary": "string"
+  },
+  "example_response": {
+    "shipments": [
+      {
+        "reference_number": "SHP-20260228-001",
+        "pickup_location": "Warehouse 7, Industrial Area, Mumbai",
+        "delivery_location": "Block C, Logistics Park, Delhi",
+        "pickup_datetime": "2026-03-01 09:00",
+        "delivery_datetime": "2026-03-03 14:00",
+        "cargo_description": "200 cartons of electronics components",
+        "weight_dimensions": "4500 kg, 20 pallets",
+        "vehicle_type": "40ft container truck",
+        "shipper_contact": "Raj Kumar, +91-9876543210, ABC Electronics",
+        "receiver_contact": "Priya Sharma, +91-9123456780, XYZ Distributors",
+        "notes": "Handle with care, fragile items. Delivery before 3 PM mandatory.",
+        "missing_fields": []
+      }
+    ],
+    "total_shipments_found": 1,
+    "summary": "1 shipment parsed successfully. All fields extracted."
+  }
+}
